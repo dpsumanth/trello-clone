@@ -1,0 +1,84 @@
+.task-card {
+  background-color: var(--color-surface);
+  border: 1px solid #dfe1e6;
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+  box-shadow: var(--shadow-sm);
+  cursor: grab;
+  transition: box-shadow var(--transition), border-color var(--transition),
+    background-color var(--transition);
+  touch-action: manipulation;
+}
+
+.task-card:hover {
+  border-color: #b3d4ff;
+  background-color: #fafbfc;
+}
+
+.task-card:active {
+  cursor: grabbing;
+}
+
+.task-card--dragging {
+  opacity: 0.35;
+}
+
+.task-card--overlay {
+  cursor: grabbing;
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-primary);
+  transform: rotate(1.5deg);
+}
+
+.task-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.task-card-title {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text);
+  word-break: break-word;
+  line-height: 1.4;
+}
+
+.task-card-description {
+  margin: 6px 0 0;
+  font-size: 13px;
+  color: var(--color-text-muted);
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  word-break: break-word;
+}
+
+.task-card-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px solid #f1f2f4;
+}
+
+.task-card-action-btn {
+  padding: 3px 8px;
+  font-size: 12px;
+  border-radius: 4px;
+}
+
+.task-card-delete-btn {
+  color: var(--color-danger);
+}
+
+.task-card-delete-btn:hover:not(:disabled) {
+  background-color: var(--color-danger-soft);
+  color: var(--color-danger-hover);
+}
